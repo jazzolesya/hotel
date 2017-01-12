@@ -1,0 +1,20 @@
+= render "layouts/header"
+.row
+  .box
+    .col-lg-12
+      %hr/
+      %h2.intro-text.text-center
+        %strong New Hotel
+      %hr/
+    .col-lg-12
+      %p
+        = simple_form_for @hotel1s do |f|
+          = render 'shared/error_messages'
+          = f.label :title
+          = f.text_field :title, class: 'form-control'
+          = f.label :room_description
+          = f.text_field :room_description, class: 'form-control'
+          = f.label :price
+          = f.text_field :price, class: 'form-control'
+          = f.submit "Save changes", class: "btn btn-primary"
+= render "layouts/footer"
